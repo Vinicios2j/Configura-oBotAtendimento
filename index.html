@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Configurador de fluxo para bot de atendimento">
+  <title>VATEC • Configurador de Bot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span>VA</span>TEC</div>
+    <div class="badge">CONFIGURADOR DE BOT</div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">ATENDIMENTO AUTOMATIZADO</p>
+      <h1>Monte o fluxo do seu <span>bot</span></h1>
+      <p class="subtitle">Configure as mensagens e opções do atendimento e visualize o resultado em tempo real.</p>
+    </section>
+
+    <div class="layout">
+      <section class="card builder">
+        <div class="section-title">
+          <div>
+            <span class="step">01</span>
+            <div>
+              <h2>Configuração do bot</h2>
+              <p>Defina como o atendimento começa.</p>
+            </div>
+          </div>
+        </div>
+
+        <label for="trigger">Mensagem do cliente</label>
+        <input id="trigger" type="text" value="OI" placeholder="Ex.: OI, OLÁ, MENU...">
+
+        <label for="welcome">Mensagem inicial do bot</label>
+        <textarea id="welcome" rows="4" placeholder="Digite a mensagem que o bot enviará...">Olá! Aqui é o bot da A3MS. Como posso ajudar? Selecione uma das opções abaixo:</textarea>
+
+        <div class="options-header">
+          <div>
+            <span class="step">02</span>
+            <div>
+              <h2>Opções de atendimento</h2>
+              <p>Crie os caminhos que o cliente poderá escolher.</p>
+            </div>
+          </div>
+          <span id="optionCount" class="counter">2 opções</span>
+        </div>
+
+        <div id="optionsList"></div>
+
+        <button id="addOption" class="btn secondary" type="button">
+          <span>＋</span> Adicionar opção
+        </button>
+
+        <div class="finalize">
+          <button id="finalizeBtn" class="btn primary" type="button">
+            Finalizar configuração <span>→</span>
+          </button>
+          <p>Ao finalizar, a configuração será enviada para o WhatsApp.</p>
+        </div>
+      </section>
+
+      <aside class="card preview-card">
+        <div class="preview-head">
+          <div>
+            <span class="step">03</span>
+            <div>
+              <h2>Prévia do atendimento</h2>
+              <p>Veja como o fluxo ficará para o cliente.</p>
+            </div>
+          </div>
+          <span class="live"><i></i> AO VIVO</span>
+        </div>
+
+        <div class="phone">
+          <div class="phone-top">
+            <div class="avatar">A</div>
+            <div>
+              <strong>A3MS Atendimento</strong>
+              <small>online</small>
+            </div>
+            <span class="dots">•••</span>
+          </div>
+
+          <div id="chat" class="chat"></div>
+
+          <div class="phone-input">
+            <span>Digite uma mensagem</span>
+            <b>➤</b>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
